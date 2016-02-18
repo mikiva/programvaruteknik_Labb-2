@@ -23,7 +23,7 @@ public class FootballGoalsSource implements DataSource {
 
 	@Override
 	public Map<LocalDate, Double> getData() {
-		UrlFetcher fetcher = new UrlFetcher("http://api.everysport.com/v1/events?apikey=1769e0fdbeabd60f479b1dcaff03bf5c&league=63925&limit=500");
+		UrlFetcher fetcher = new UrlFetcher("http://api.everysport.com/v1/events?apikey=1769e0fdbeabd60f479b1dcaff03bf5c&league=63925&limit=1000");
 		JsonToMapParser parser = new JsonToMapParser(fetcher.getContent());
 		Map<String, Object> data = parser.getResult();
 		Map<LocalDate, Double> result = new TreeMap<>();
