@@ -18,7 +18,7 @@ public class TemperatureSource {
 	
 	public void run(){
 		
-		String csvFile = "smhi-opendata_2_62030_corrected-archive_2016-02-01_22-00-00";
+		String csvFile = "smhi-opendata_2_107420_corrected-archive_2016-02-01_23-00-00";
 		
 		BufferedReader br = null;
 		String line = "";
