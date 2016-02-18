@@ -35,7 +35,7 @@ public class FootballGoalsSource implements DataSource {
 			if (arena != null){
 				String playedArena = (String)arena.get("articleName"); 
 
-				if(playedArena.equals(City.HELSINGBORG.getArena())){
+				if(playedArena.equals(City.GAVLE.getArena())){
 					LocalDate date = LocalDate.parse(event.get("startDate").toString().substring(0, 10));
 					int goals = Integer.parseInt(event.get("visitingTeamScore").toString());
 					goals += Integer.parseInt(event.get("homeTeamScore").toString());
@@ -58,6 +58,6 @@ public class FootballGoalsSource implements DataSource {
 
 	public static void main(String[] args) {
 		System.out.println(new FootballGoalsSource().getData());
-		System.out.println(City.HELSINGBORG.getArena());
+		System.out.println(City.GAVLE.getArena());
 	}
 }
