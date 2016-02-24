@@ -56,8 +56,8 @@ public class FootballGoalsSource implements DataSource {
 		}
 	}
 
-	public static void main(String[] args) {
-		System.out.println(new FootballGoalsSource().getData());
-		System.out.println(City.GAVLE.getArena());
-	}
+//	public static void main(String[] args) {
+//		System.out.println(new FootballGoalsSource().getData());
+//		System.out.println(City.GAVLE.getArena());
+//	}
 }

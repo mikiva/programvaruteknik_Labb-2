@@ -38,5 +38,7 @@ public class UrlFetcher {
     public static void main(String[] args) {
         System.out.println(
                 new UrlFetcher("http://api.everysport.com/v1/events?apikey=1769e0fdbeabd60f479b1dcaff03bf5c&league=63925&limit=2").getContent());
+        		System.out.println(
+        				new UrlFetcher("smhi-opendata_2_107420_corrected-archive_2016-02-01_23-00-00").getContent());
     }
 }
