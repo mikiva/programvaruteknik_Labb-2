@@ -59,6 +59,6 @@ public class DataCollection {
 	 * a string. The information is title, data, and units
 	 */
 	public String toString(){
-		return "data: " + data + "title: " + title + "xUnit: " + xUnit + "yUnit: " + yUnit;
+		return "data: " + data; //+ "title: " + title + "xUnit: " + xUnit + "yUnit: " + yUnit;
 	}
 }

@@ -42,7 +42,7 @@ public class MatchedDataPair {
 	 * in a string
 	 */
 	public String toString(){
-		return "xValue"+ xValue +"yValue"+ yValue;
+		return "Antal mål: "+ xValue +" Temperatur: "+ yValue;
 	}	
 }
 

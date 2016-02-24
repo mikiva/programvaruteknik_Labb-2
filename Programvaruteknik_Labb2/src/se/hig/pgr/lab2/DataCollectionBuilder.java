@@ -74,6 +74,10 @@ public class DataCollectionBuilder {
 
 			finalResult.put(pairs.getKey(), new MatchedDataPair((sumX / counter), (sumY / counter)));
 		}
+		
+		
+		
+		
 
 		return new DataCollection(getTitle(), xData.getName()+": " + xData.getUnit(),
 				yData.getName()+": "+yData.getUnit(), finalResult);
