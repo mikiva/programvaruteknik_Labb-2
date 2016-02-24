@@ -2,9 +2,18 @@ package se.hig.pgr.lab2;
 
 import java.io.BufferedReader;
 
-public class TemperatureSource {
+public class TemperatureSource implements DataSource{
 	
 	
+	@Override
+	public String getUnit(){
+		return "Celsius";
+	}
+	@Override
+	public String getName(){
+		
+		return "Temperatur for " + City.GAVLE;
+	}
 	
 	
 
