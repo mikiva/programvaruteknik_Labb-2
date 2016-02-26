@@ -69,7 +69,7 @@ public class DataCollectionBuilder {
 				sumX = sumX + pair.getXvalue();
 				sumY = sumY + pair.getYvalue();
 				counter++;
-				System.out.println(pair);
+			//	System.out.println(pair);
 			}
 
 			finalResult.put(pairs.getKey(), new MatchedDataPair((sumX / counter), (sumY / counter)));

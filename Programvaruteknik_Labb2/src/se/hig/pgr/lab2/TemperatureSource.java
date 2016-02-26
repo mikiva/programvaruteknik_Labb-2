@@ -9,16 +9,26 @@ import java.time.LocalDate;
 import java.util.Map;
 
 public class TemperatureSource implements DataSource{
-
+	private String name;
+	private String unit;
+	private City city;
+	
+	
+	
+	public  TemperatureSource (String name, String unit, City city){
+		this.name = name;
+		this.unit = unit;
+		this.city = city;
+	}
 
 	@Override
 	public String getUnit(){
-		return "Celsius";
+		return unit;
 	}
 	@Override
 	public String getName(){
 
-		return "Temperatur for " + City.GAVLE;
+		return name +" "+ city.getName();
 	}
 
 	
@@ -42,7 +52,7 @@ public class TemperatureSource implements DataSource{
 			e.printStackTrace();
 		}
 
-		System.out.println(parser.getResult());
+	//	System.out.println(parser.getResult());
 
 		return parser.getResult();
 	}

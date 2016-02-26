@@ -8,31 +8,25 @@ import java.io.IOException;
 public class Main {
 
 	private static DataCollectionBuilder builder;
-	
+
 	public static void main(String[] args) {
-		
+
 		//	System.out.println(new FootballGoalsSource().getData());
-			System.out.println(City.GAVLE.getArena());
-			
+		System.out.println(City.GAVLE.getArena());
+
 		//	System.out.println(new TemperatureSource().getData());
-			
-		
-			run();
-			
+
+
+		run();
+
 
 	}
-	
-	private static void run(){
-		
-		builder = new DataCollectionBuilder(new FootballGoalsSource(), new TemperatureSource(), Resolution.DAY);
-		
-		
-		
 
-		
-		
-		
-		
+	private static void run(){
+
+		builder = new DataCollectionBuilder(new FootballGoalsSource("Goals", "st"), 
+				new TemperatureSource("Temperature for ", "C", City.GAVLE), Resolution.DAY);
+
 		System.out.println(builder.getResult().toString());
 	}
 

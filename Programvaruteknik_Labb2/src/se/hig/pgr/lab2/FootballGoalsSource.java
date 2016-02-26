@@ -1,6 +1,7 @@
 package se.hig.pgr.lab2;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -10,15 +11,26 @@ import java.util.TreeMap;
  * @author thomas
  */
 public class FootballGoalsSource implements DataSource {
+	
+	private String name;
+	private String unit;
+	
+	
+	
+	public FootballGoalsSource (String name, String unit){
+		this.name = name;
+		this.unit = unit;
+		
+	}
 
 	@Override
 	public String getName() {
-		return "Antal mål per matchdag i fotbollsallsvenskan";
+		return name;
 	}
 
 	@Override
 	public String getUnit() {
-		return "Antal mål";
+		return unit ;
 	}
 
 	@Override
@@ -56,6 +68,28 @@ public class FootballGoalsSource implements DataSource {
 		}
 	}
 
+	
+	public Map<LocalDate, Double> testGetData(String json, City city){
+		Map<String,Object> data;
+		JsonToMapParser parser = new JsonToMapParser(json);
+		data = parser.getResult();
+		
+		Map<LocalDate, Double> result = new TreeMap<>();
+		for (Map citys : (List<Map>) data.get("game")){
+			
+			String stad = (String)citys.get("city");
+			
+			if(stad.equals(city.getName())){
+				LocalDate date = LocalDate.parse((citys.get("date").toString()));
+				Double goals = Double.parseDouble(citys.get("goals").toString());
+				result.put(date, goals);
+			}
+		}
+		
+		
+		return result;
+	}
+	
 //	public static void main(String[] args) {
 //		System.out.println(new FootballGoalsSource().getData());
 //		System.out.println(City.GAVLE.getArena());
