@@ -33,7 +33,8 @@ public class CSVparser {
 		for (int i = 0; i < splitString.length; i++) {
 			if(splitString[i].startsWith("Y"))
 			{
-				temperatureMap.put(LocalDate.parse(splitString[i-2]), Double.parseDouble(splitString[i-1]));
+				temperatureMap.put(LocalDate.parse(splitString[i-2]), 
+						Double.parseDouble(splitString[i-1]));
 			}
 			
 		}

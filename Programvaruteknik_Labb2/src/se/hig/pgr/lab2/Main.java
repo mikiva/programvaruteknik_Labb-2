@@ -11,21 +11,18 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		//	System.out.println(new FootballGoalsSource().getData());
+		
 		System.out.println(City.GAVLE.getArena());
 
-		//	System.out.println(new TemperatureSource().getData());
-
-
-		run();
+		run(City.GAVLE);
 
 
 	}
 
-	private static void run(){
+	private static void run(City city){
 
 		builder = new DataCollectionBuilder(new FootballGoalsSource("Goals", "st"), 
-				new TemperatureSource("Temperature for ", "C", City.GAVLE), Resolution.DAY);
+				new TemperatureSource("Temperature for ", "C", city), Resolution.MONTH);
 
 		System.out.println(builder.getResult().toString());
 	}

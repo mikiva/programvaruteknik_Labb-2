@@ -57,7 +57,6 @@ public class FootballGoalsSource implements DataSource {
 		}
 		return result;
 
-
 	}
 
 	private void addGoalsToDate(Map<LocalDate, Double> result, LocalDate date, int goals) {
@@ -68,7 +67,10 @@ public class FootballGoalsSource implements DataSource {
 		}
 	}
 
-	
+	/**
+	 * Method to test json-parser with data.
+	 * 
+	 */
 	public Map<LocalDate, Double> testGetData(String json, City city){
 		Map<String,Object> data;
 		JsonToMapParser parser = new JsonToMapParser(json);
@@ -89,9 +91,5 @@ public class FootballGoalsSource implements DataSource {
 		
 		return result;
 	}
-	
-//	public static void main(String[] args) {
-//		System.out.println(new FootballGoalsSource().getData());
-//		System.out.println(City.GAVLE.getArena());
-//	}
+
 }
